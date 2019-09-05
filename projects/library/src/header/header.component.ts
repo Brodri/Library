@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   @Input() pendingTaskHeader = true
   @Input() optionsMenuHeader: any[]
   @Input() headerBreadcrumbs=[{"name":"Home", "redirect":"home"}, {"name":"User", "redirect":"user"},{"name":"Home Number 2", "redirect":"home"}, {"name":"User Number 2", "redirect":"user"},{"name":"Home Number 3", "redirect":"home"}, {"name":"User Number 3", "redirect":"user"}]
-  @Input() headerDataUser={name:"pepito perez", email:"p.perez@mobiera.com"}
+  @Input() headerDataUser={name:"pepito perez", email:"p.perez@dominio.com"}
   @Input() headerRequiredSearchHeader = true
   @Input() headerRequiredButtonHelp = true
   @Input() headerMyHoldingSupevision =true
