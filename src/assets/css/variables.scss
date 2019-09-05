@@ -1,0 +1,67 @@
+// Global
+$global-gray1: #cccccc;
+$global-gray2: #efefef;
+$global-gray3: #fbfbfb;
+$global-black: #000000;
+//
+
+// Font
+$font-family: 'Lato' !important;
+// Close Font
+
+// Space
+$space-bottom-component:20px;
+$space-top-component:20px;
+$space1-text-vertival: 46px;
+$space1-text-horizontal: 38px;
+$space1-text-horizontal-movil: 5px;
+// Close Space
+
+// Subtitles
+$subtitle1-font-size: 19px;
+$subtitle1-text-bottom: 16px;
+// Close Subtitles
+
+// Description
+$description1-font-size: 14px;
+$description1-align-description: justify;
+// Close Description
+
+// Forms
+$form-principal-margin-top: 24px;
+$title-form-float: left;
+$title-form-font-size: 13px;
+$title-form-color: #333333;
+$title-form-margin-right: 8px;
+$title-form-margin-top: 6px;
+$title-form-width: 120px;
+$form-content-max-width: 246px;
+$form-content-min-width: 238px;
+$input-form-font-size:13px;
+$input-form-color: #333333;
+$input-form-color: #333333;
+$input-form-height: 26px;
+$input-form-padding-left: 4px;
+$input-form-padding-right: 4px;
+$input-form-border: 1px solid #cccccc;
+$input-form-outline-focus: none !important;
+$input-form-border-focus: 1px solid #4867D0;
+$input-form-border-error: 1px solid #FF0000 !important;
+$input-form-display-error: table;
+$input-form-color-error: #FF0000;
+$input-form-position-error: absolute;
+$input-form-visibility-error: hidden;
+$input-form-font-size-error: 0px;
+$input-form-transition-error: 0.2s ease-in-out;
+$input-form-margin-top-error: 2px;
+$input-form-icon-margin-top-error: 4px;
+$input-form-icon-float-error: left;
+$input-form-icon-margin-right-error: 2px;
+
+//Responsive
+$title-form-margin-top-movil: 0px;
+$title-form-width-movil: 100%;
+$form-content-max-width-movil: calc(100% - 8px);
+$form-content-width-movil: calc(100% - 8px);
+$form-content-margin-top-movil: 4px;
+// Close Forms

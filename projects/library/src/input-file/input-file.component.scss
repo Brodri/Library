@@ -1,0 +1,151 @@
+@import './src/assets/css/variables.scss';
+
+.input-file-uploader input {
+  display: none;
+}
+  
+.input-file-uploader {
+  background-color: $global-gray2;
+  background-color: rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  height: 131px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  outline: 2px dashed #E6E6E6;
+  outline-offset: 4px;
+  position: relative;
+  width: 238px;
+  margin-left: 6px;
+  z-index: 10;
+}
+
+.input-file-uploader img,
+.input-file-uploader .input-file-icon {
+  pointer-events: none;
+}
+
+.input-file-uploader,
+.input-file-uploader .input-file-icon {
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+.input-file-icon {
+  color: #E6E6E6;
+  font-size: 5em;
+  margin-top: 10px;
+}
+
+.input-file-uploader img {
+  left: 50%;
+  opacity: 0;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.input-file-uploader img.loaded {
+  opacity: 1;
+}
+
+.input-file-title{
+  color: #909090;
+  font-size: $title-form-font-size;
+  width: 250px;
+  text-align: center;
+  margin-top: -36px;
+  //position: absolute;
+  z-index: 1;
+}
+
+.input-file-button-container{
+  width: 250px;
+  margin-top: 40px;
+}
+
+.input-file-button{
+  font-size: $title-form-font-size;
+  color: white;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+  padding: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 4px
+}
+
+.input-simple-error{
+  outline-color: $input-form-color-error;
+}
+
+.input-simple-error-label{
+  color: $input-form-color-error;
+}
+
+.input-simple-error-image{
+  color: $input-form-color-error;
+}
+
+.input-file-data1{
+  color: #909090;
+  font-size: 13px;
+  position: absolute;
+}
+
+.input-file-data2{
+  color: #909090;
+  font-size: 13px;
+  position: absolute;
+  margin-top: 16px
+}
+
+.input-file-data-container{
+  margin-left: 262px;
+  position: relative;
+  margin-top: -6px;
+  width:320px
+}
+
+.input-file{
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .input-file-data-container{
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .input-file-data1{
+    color: #909090;
+    font-size: 13px;
+    position: relative;
+  }
+  
+  .input-file-data2{
+    color: #909090;
+    font-size: 13px;
+    position: relative;
+    margin-top: 0px
+  }
+  .input-file{
+    margin-bottom: 20px;
+  }
+}

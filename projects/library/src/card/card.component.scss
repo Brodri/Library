@@ -1,0 +1,129 @@
+@import './src/assets/css/variables.scss';
+
+.card-container{
+    margin-left: $space1-text-horizontal;
+    width: calc(100% - 76px);
+    height: auto;
+    border: $input-form-border;
+    margin-bottom: $space-bottom-component;
+    margin-top: $space-top-component;
+}
+
+.card-row-principal{
+    display: flex;
+    cursor: pointer;
+}
+
+.card-row-principal:hover{
+    background: $global-gray3
+}
+
+.card-row-principal-displaceable{
+    display: flex;
+    cursor: pointer
+}
+
+.card-row-principal-displaceable:hover{
+    background: $global-gray3
+}
+
+.card-icon{
+    float: right;
+    margin-top: -30px;
+    cursor: pointer;
+}
+
+.card-row-displaceable{
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    width: calc(100% - 2px);
+}
+
+.card-container-image{
+    padding: 24px;
+}
+
+.card-container-image-displaceable{
+    padding: 24px;
+}
+
+.card-image{
+    width: 60px;
+}
+
+.card-content{
+    padding: 20px;
+    width: fit-content;
+    width: 100%;
+}
+
+.card-content-displaceable{
+    width: fit-content;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $global-gray1; 
+    border-radius:4px
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+@media screen and (max-width: 768px) {
+
+    .card-icon{
+        margin-top: -22px;
+        position: relative;
+    }
+
+    .card-content{
+        padding: 10px;
+    }
+
+    .card-container-image{
+        padding: 12px;
+    }
+
+    .card-container-image-displaceable{
+        padding: 23px;
+        padding-bottom: 0px;
+    }
+
+    .card-container{
+        margin-left: 8px;
+        width: calc(100% - 19px);
+    }
+
+    .card-row-principal-displaceable{
+        display: inherit;
+        text-align: center
+    }
+
+    .card-content-displaceable{
+        width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+
+    .card-container{
+        margin-left: $space1-text-horizontal-movil;
+        width: calc(100% - 12px);
+    }
+
+}

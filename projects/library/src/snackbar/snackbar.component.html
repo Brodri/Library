@@ -1,0 +1,15 @@
+<div class="snackbar"
+id="snackbar">
+  <div
+  [id]="snackbarId"
+  [style.background]="snackbarColor"
+  [style.color]="snackbarOtherColor"
+  [style.border]="'1px solid '+snackbarBorder"
+  class="snackbar-container">
+    <div
+    [id]="snackbarId+'-content'"
+    class="snackbar-content">
+      {{snackbarContent}}
+    </div>
+  </div>
+</div>

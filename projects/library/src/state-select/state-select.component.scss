@@ -1,0 +1,50 @@
+@import './src/assets/css/variables.scss';
+
+.status-select{
+    display: table-row;
+    width: auto;
+    background: white;
+}
+
+.status-select-container {
+    color: $title-form-color;
+    cursor: pointer;
+    padding: 9px;
+    padding-left: 16px;
+    border: 1px solid #cccccc;
+    text-align: left;
+    font-size: $title-form-font-size;
+    transition: 0.2s;
+}
+
+.status-select-options {
+    color: $title-form-color;
+    cursor: pointer;
+    padding: 9px;
+    padding-left: 16px;
+    border: none;
+    text-align: left;
+    font-size: $title-form-font-size;
+    transition: 0.2s;
+}
+
+.status-select-container:hover {
+    background-color: #F7F8FA !important;
+}
+
+.status-select-panel {
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-top: 0px;
+    border: 1px solid #cccccc
+}
+
+.status-select-circle{
+    height: 16px;
+    border-radius: 10px;
+    width: 16px;
+    float: right;
+    margin-top: 0px;
+    margin-left: 20px;
+}

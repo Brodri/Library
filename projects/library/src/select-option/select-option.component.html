@@ -1,0 +1,71 @@
+<div class="select-option" [style.width]="selectOptionWidth">
+  <div class="select-option-name" *ngIf="selectOptionWithContent">{{selectOptionContent}}:</div>
+  <div class="select-option-container">
+    <input
+    [id]="selectOptionId"
+    (focusout)="selectOptionFocusOut(selectOptionId)"
+    (focus)="selectOptionFocus(selectOptionId)"
+    (ngModelChange)="changeOpcionSelected($event)"
+    [(ngModel)]="searchText"
+    #ctrl="ngModel"
+    [style.display]="selectOptionInputTag"
+    [placeholder]="selectOptionPlaceholder"
+    class="select-option-input"
+    type="text"
+    [style.min-width]="selectOptionWidthForceContent"
+    [style.max-width]="selectOptionWidthForce"
+    [disabled]="selectOptionDisabled">
+    <div [style.display]="selectOptionInput" [style.width]="selectOptionWidthForce" class="select-option-close-container">
+      <div class="select-option-close" (click)="selectOpcionClose(selectOptionId)">
+          <img class="select-option-close-image" src="assets/images/close.svg">
+      </div>
+    </div>
+    <div [style.display]="selectOptionInput"
+    [style.min-width]="selectOptionWidthForce"
+    [style.max-width]="selectOptionWidthForce"
+    class="select-option-list">
+      <ul class="select-option-dropdown">
+
+        <li *ngFor="let list of selectOptionArray | filter : searchText" class="select-option-item">
+          <div class="select-option-selected select-option-border-none"
+          [style.min-width]="selectOptionWidthForceContent"
+          [style.grid-template-columns]="selectOptionColumns2"
+          (click)="selectOptionNew(list.id, list.image, list.idOption, list.name)">
+            <span *ngIf="selectOptionImage" class="select-option-icon-left-container">
+              <img class="select-option-icon-left" [src]="domSanitizer.bypassSecurityTrustUrl(list.image)" alt="">
+            </span>
+            <span class="select-option-selected-text">{{list.name}}</span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div [style.display]="selectOpcionSelectedVar" [style.display]="selectOptionCenterDisplay" [style.justify-content]="selectOptionJustifyContent"
+         [style.height]="selectOptionErrorMsg">
+    <div [style.border-color] = "errorColor" *ngIf="selectOption1" (click)="selectOpcionSelected()" class="select-option-selected"
+      [style.grid-template-columns]="selectOptionColumns1" [style.min-width]="selectOptionWidthForce" [style.max-width]="selectOptionWidthForce">
+      <span *ngIf="selectOptionSelectedId && selectOptionImage" class="select-option-icon-left-container">
+        <img class="select-option-icon-left" [src]="selectOptioImage" alt="">
+      </span>
+      <span class="select-option-selected-text">{{selectOptionPlaceholder}}</span>
+      <span class="select-option-icon-right-container">
+        <img class="select-option-icon-right" src="assets/images/down-focus.svg" alt="">
+      </span>
+    </div>
+    </div>
+    <div *ngIf="selectOptioRequired"
+      [id]="selectOptionId+'-error'"
+      class="select-option-message-error">
+      <img
+      [id]="selectOptionId+'-logo'"
+      class="select-option-logo-error"
+      src="assets/images/close-red.svg"
+      alt="error input">
+      <div
+        [id]="selectOptionId+'-message-error'"
+        class="select-option-text-error">
+        {{selectOptionContent}} no valido
+      </div>
+    </div>
+  </div>
+</div>

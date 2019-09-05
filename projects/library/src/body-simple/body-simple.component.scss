@@ -1,0 +1,32 @@
+.body-simple{
+    width: calc(96% - 1px);
+    margin: calc(2% - 1px);
+    background: #ffffff;
+    min-height: 20px;
+    border: 1px solid #cccccc;
+    min-height: calc(90vh - 112px);
+}
+
+@media screen and (max-width: 768px) {
+    .body-simple{
+        width: calc(98% - 1px);
+        margin: calc(1% - 1px);
+        min-height: calc(90vh - 64px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .body-simple{
+        width: calc(98% - 1px);
+        margin: calc(1% - 1px);
+        min-height: calc(90vh - 60px);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .body-simple{
+        width: calc(98% - 1px);
+        margin: calc(1% - 1px);
+        min-height: calc(90vh - 56px);
+    }
+}

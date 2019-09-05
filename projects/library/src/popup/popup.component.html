@@ -1,0 +1,37 @@
+<div *ngIf="popupCover"
+[id]="popupId+'-principal'" class="popup-cover"></div>
+
+<div *ngIf="popupCover"
+[id]="popupId+'-principal-2'" class="popup">
+  <div
+  [id]="popupId+'-container'" 
+  class="popup-container">
+    <div
+    [id]="popupId+'-title'"
+    class="popup-header"
+    [style.background]="popupColor">
+      {{popupTitle}}  
+    </div>
+    <div
+    [id]="popupId+'-content'"
+    class="popup-content">
+      {{popupContent}}
+    </div>
+    <div [id]="popupId+'-buttons'" class="popup-buttons">
+      <div class="popup-button-1" [id]="'popup-button-1-'+popupId" (click)="popupSelect()" *ngIf="popupConfirmButton">
+          <div class="popup-button" [style.background]="popupColor">
+            <div class="popup-opacity">
+              Confirm
+            </div>
+          </div>
+      </div>
+      <div class="popup-button-2" [id]="'popup-button-2-'+popupId" (click)="popupCover=false" *ngIf="popupCancelButton">
+          <div class="popup-button" [style.background]="popupColor">
+            <div class="popup-opacity">
+              Cancel
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

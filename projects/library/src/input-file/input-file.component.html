@@ -1,0 +1,61 @@
+<div *ngIf="!inputFileDisabled" class="input-file">
+        <label [id]="inputFileId" class="input-file-uploader" ondragover="return false;"
+        [class.loaded]="loaded" 
+        [style.outlineColor]="dragging ? inputFileColor : none"
+        (dragenter)="handleDragEnter()"
+        (dragleave)="handleDragLeave()"
+        (drop)="handleDrop($event, this)">
+                <i [id]="inputFileId+'-image'" class="input-file-icon material-icons" [style.color]="dragging 
+                        ? ((imageSrc.length > 0) ? overlayColor : inputFileColor)
+                        : ((imageSrc.length > 0) ? overlayColor : none)">&#xE2C3;
+                </i>
+                <img [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded"/>
+                <input type="file" name="file" [accept]="inputFileAcceptHtml" (change)="handleInputChange($event, this)">
+
+        </label>
+        <div [id]="inputFileId+'-label'" class="input-file-title" [style.color]="dragging 
+                ? ((imageSrc.length > 0) ? overlayColor : inputFileColor)
+                : ((imageSrc.length > 0) ? overlayColor : none)">{{inputFileTitle}}
+        </div>
+        <div class="input-file-data-container" *ngIf="inputFileDataSize || inputFileDataDimensions">
+                <div *ngIf="inputFileDataSize" class="input-file-data1">
+                        {{ 'inputFile.inputFileDataSize' | translate }}: {{inputFileDataSize}}
+                </div>
+                <div *ngIf="inputFileDataDimensions" class="input-file-data2">
+                        {{ 'inputFile.inputFileDataDimensions' | translate }}:  {{inputFileDataDimensions}}
+                </div>
+        </div>
+
+        <div *ngIf="inputFileButtonActive" class="input-file-button-container">
+                <div [id]="inputFileId+'-button'" class="input-file-button" [style.background]="inputFileColor">{{inputFileContentButton}}</div>
+        </div>
+</div>
+
+<div *ngIf="inputFileDisabled" class="input-file">
+        <label [id]="inputFileId" class="input-file-uploader" style="background:#efefef;cursor:auto;position: inherit;" ondragover="return false;">
+
+                <i [id]="inputFileId+'-image'" class="input-file-icon material-icons" [style.color]="dragging 
+                        ? ((imageSrc.length > 0) ? overlayColor : inputFileColor)
+                        : ((imageSrc.length > 0) ? overlayColor : none)">&#xE2C3;
+                </i>
+                <img [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded"/>
+                <input [disabled]="inputFileDisabled" type="file" name="file" [accept]="inputFileAcceptHtml" (change)="handleInputChange($event, this)">
+
+        </label>
+        <div [id]="inputFileId+'-label'" class="input-file-title" [style.color]="dragging 
+                ? ((imageSrc.length > 0) ? overlayColor : inputFileColor)
+                : ((imageSrc.length > 0) ? overlayColor : none)">{{inputFileTitle}}
+        </div>
+        <div class="input-file-data-container" *ngIf="inputFileDataSize || inputFileDataDimensions">
+                <div *ngIf="inputFileDataSize" class="input-file-data1">
+                        {{ 'inputFile.inputFileDataSize' | translate }}: {{inputFileDataSize}}
+                </div>
+                <div *ngIf="inputFileDataDimensions" class="input-file-data2">
+                        {{ 'inputFile.inputFileDataDimensions' | translate }}:  {{inputFileDataDimensions}}
+                </div>
+        </div>
+
+        <div *ngIf="inputFileButtonActive" class="input-file-button-container">
+                <div [id]="inputFileId+'-button'" class="input-file-button" [style.background]="inputFileColor">{{inputFileContentButton}}</div>
+        </div>
+</div>

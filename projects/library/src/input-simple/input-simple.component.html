@@ -1,0 +1,51 @@
+<div
+[id]="inputSimpleId+'-principal'" class="input-simple">
+  <div *ngIf="inputSimpleContent"
+  [id]="inputSimpleId+'-principal-2'"
+  class="input-simple-name"
+  [style.width]="inputSimpleWidth"
+  [style.margin-right]="inputSimpleMarginRight">
+    {{inputSimpleContent}}:
+  </div>
+  <div
+    [id]="inputSimpleId+'-container'"
+    class="input-simple-container">
+    <input *ngIf="!inputSimplePassword" class="input-simple-input"
+    [(ngModel)]="inputSimpleData" 
+    #ctrl="ngModel"
+    [id]="inputSimpleId"
+    (ngModelChange)="inputSimpleChange($event, inputSimpleId)"
+    (focusout)="inputSimpleChangeFocusOut(inputSimpleId)"
+    (focus)="inputSimpleChangeFocus(inputSimpleId)"
+    type="text"
+    [style.min-width]="inputSimpleMinWidth"
+    [style.width]="inputSimpleWidthInput"
+    [disabled]="inputSimpleDisabled">
+    <input *ngIf="inputSimplePassword" class="input-simple-input"
+    [(ngModel)]="inputSimpleData" 
+    #ctrl="ngModel"
+    [id]="inputSimpleId"
+    (ngModelChange)="inputSimpleChange($event, inputSimpleId)"
+    (focusout)="inputSimpleChangeFocusOut(inputSimpleId)"
+    (focus)="inputSimpleChangeFocus(inputSimpleId)"
+    type="text"
+    [style.min-width]="inputSimpleMinWidth"
+    [style.width]="inputSimpleWidthInput"
+    [disabled]="inputSimpleDisabled"
+    type = "password">
+    <div *ngIf="inputSimpleRequired || inputSimpleEmail || inputSimpleNumber || inputSimplePassword"
+    [id]="inputSimpleId+'-error'"
+    class="input-simple-message-error">
+      <img
+      [id]="inputSimpleId+'-logo'"
+      class="input-simple-logo-error"
+      src="assets/images/close-red.svg"
+      alt="error input">
+      <div
+      [id]="inputSimpleId+'-message-error'"
+      class="input-simple-text-error">
+        {{inputSimpleContent}} no valido
+      </div>
+    </div>
+  </div>
+</div>

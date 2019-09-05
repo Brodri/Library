@@ -1,0 +1,20 @@
+.simple-button-container{
+    width: 100%;
+    height: 100%;
+}
+.simple-button{
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 4px;
+    outline:none !important;
+    
+}
+
+.simple-button-disabled{
+    cursor: auto;
+}

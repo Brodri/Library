@@ -1,0 +1,28 @@
+<label
+[id]="slideToggleId+'-container'" class="slide-toggle-switch">
+  <input
+  (change)="slideToggleChange(valueSlideToggle)"
+  [(ngModel)]="valueSlideToggle"
+  [id]="slideToggleId"
+  type="checkbox"
+  [disabled]="slideSimpleDisabled">
+  <span
+  [id]="slideToggleId+'-span'"
+  [style.background-color]="valueSlideToggleColor"
+  [style.border]="valueSlideToggleBorderColor"
+  class="slide-toggle-slider slide-toggle-round">
+  </span>
+</label>
+<div *ngIf="slideToggleRequired"
+[id]="slideToggleId+'-error'"  class="slide-toggle-message-error">
+  <img
+  [id]="slideToggleId+'-logo'"
+  class="slide-toggle-logo-error"
+  src="assets/images/close-red.svg"
+  alt="error input">
+  <div
+  [id]="slideToggleId+'message-error'"
+  class="slide-toggle-text-error">
+    no valido
+  </div>
+</div>

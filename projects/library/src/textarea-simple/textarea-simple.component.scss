@@ -1,0 +1,86 @@
+@import './src/assets/css/variables.scss';
+
+.textarea-simple{
+    margin-bottom: $form-principal-margin-top;
+}
+
+.textarea-simple-name{
+    float: $title-form-float;
+    margin-right: $title-form-margin-right;
+    color:$title-form-color;
+    font-size: $title-form-font-size;
+    margin-top: $title-form-margin-top;
+    width: $title-form-width;
+}
+
+.textarea-simple-container{
+    display: $input-form-display-error;
+}
+
+.textarea-simple-textarea{
+    max-width: $form-content-max-width;
+    height: $input-form-height;
+    min-width: $form-content-min-width;
+    font-size: $input-form-font-size;
+    color: $input-form-color;
+    padding-left: $input-form-padding-left;
+    padding-right: $input-form-padding-right;
+    border: $input-form-border;
+    font-family: $font-family;
+    min-height: 60px;
+}
+
+.textarea-simple-textarea:focus{
+    outline: $input-form-outline-focus;
+    border: $input-form-border-focus;
+}
+
+.textarea-simple-error{
+    border: $input-form-border-error;
+    color: $input-form-color-error;
+}
+
+.textarea-simple-message-error{
+    font-size: $input-form-font-size-error;
+    color:$input-form-color-error;
+    visibility: $input-form-visibility-error;
+    //position: $input-form-position-error;
+    transition: $input-form-transition-error;
+    min-width: $form-content-min-width;
+    display: table-row;
+}
+
+.textarea-simple-logo-error{
+    width: $input-form-font-size-error;
+    margin-top: $input-form-icon-margin-top-error;
+    float: $input-form-icon-float-error;
+    transition: $input-form-transition-error;
+    margin-right: $input-form-icon-margin-right-error
+}
+
+.textarea-simple-text-error{
+    margin-top: $input-form-margin-top-error;
+    text-align: left;
+}
+
+textarea:disabled{
+    background: $global-gray2
+}
+
+@media screen and (max-width: 768px) {
+    .textarea-simple-name{
+        margin-top: $title-form-margin-top-movil;
+        width: $title-form-width-movil;
+    }
+
+    .textarea-simple-textarea{
+        max-width: $form-content-max-width-movil;
+        width: $form-content-width-movil;
+        margin-top: $form-content-margin-top-movil;
+    }
+
+    .textarea-simple{
+        margin-bottom: 0px;
+    }
+
+}

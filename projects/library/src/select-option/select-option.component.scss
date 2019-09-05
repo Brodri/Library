@@ -1,0 +1,193 @@
+@import './src/assets/css/variables.scss';
+
+.select-option{
+    margin-bottom: $form-principal-margin-top;
+}
+
+.select-option-name{
+    float: $title-form-float;
+    margin-right: $title-form-margin-right;
+    color:$title-form-color;
+    font-size: $title-form-font-size;
+    margin-top: $title-form-margin-top;
+    width: $title-form-width;
+}
+
+.select-option-container{
+    display: $input-form-display-error;
+}
+
+.select-option-input{
+    max-width: $form-content-max-width;
+    height: $input-form-height;
+    min-width: $form-content-min-width;
+    font-size: $input-form-font-size;
+    color: $input-form-color;
+    padding-left: $input-form-padding-left;
+    padding-right: $input-form-padding-right;
+    border: $input-form-border;
+    font-family: $font-family;
+}
+
+.select-option-selected{
+    max-width: $form-content-max-width;
+    min-height: $input-form-height;
+    min-width: $form-content-max-width;
+    display: grid;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    background: white
+}
+
+.select-option-selected:hover{
+    background: #EFF2F7
+}
+
+.select-option-icon-left-container{
+    text-align: center;
+}
+
+.select-option-icon-left{
+    width: 30px;
+    margin-top: 4px
+}
+
+.select-option-selected-text{
+    font-size: $input-form-font-size;
+    color: $input-form-color;
+    padding-left: $input-form-padding-left;
+    padding-right: $input-form-padding-right;
+    padding-top: 4px;
+}
+
+.select-option-icon-right-container{
+    text-align: center;
+}
+
+.select-option-icon-right{
+    width: 18px;
+    margin-top: 12px
+}
+
+.select-option-input:focus{
+    outline: $input-form-outline-focus;
+    border: $input-form-border-focus;
+}
+
+.select-option-item{
+    list-style-type: none;
+}
+
+.select-option-dropdown{
+    margin-top: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.select-option-list{
+    max-height: 155px;
+    overflow: auto;
+    max-width: 248px;
+    border: 1px solid #e6e6e6;
+    border-top: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888888;
+}
+
+.select-option-border-none{
+    border: 0px solid #ffffff;
+    min-width: 230px
+}
+
+.select-option-close-container{
+    width: 250px;
+    position: absolute;
+}
+
+.select-option-close{
+    float: right;
+    margin-right: 6px;
+    background: #cccccc;;
+    margin-top: -24px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border-radius: 25px;
+}
+
+.select-option-close-image{
+    width: 9px;
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+}
+
+.select-option-error{
+    border: $input-form-border-error;
+    color: $input-form-color-error;
+}
+
+.select-option-message-error{
+    font-size: $input-form-font-size-error;
+    color:$input-form-color-error;
+    visibility: $input-form-visibility-error;
+    transition: $input-form-transition-error;
+    min-width: $form-content-min-width;
+}
+
+.select-option-logo-error{
+    width: $input-form-font-size-error;
+    margin-top: 2px;
+    float: $input-form-icon-float-error;
+    transition: $input-form-transition-error;
+    margin-right: $input-form-icon-margin-right-error
+}
+
+.select-option-text-error{
+    margin-top: $input-form-margin-top-error;
+}
+
+.select-option-space{
+    height: 30px
+}
+
+input:disabled{
+    background-color: #efefef !important
+}
+
+@media screen and (max-width: 768px) {
+    .select-option{
+        width: 248px !important;
+        margin-bottom: 0px;
+        margin-top: 0px !important;
+        float: none;
+    }
+
+    .select-option-name{
+        width: 248px !important;
+    }
+
+    .select-option-space{
+        height: 30px;
+    }
+
+}

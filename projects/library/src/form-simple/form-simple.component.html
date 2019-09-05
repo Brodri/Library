@@ -1,0 +1,14 @@
+<div class="form-simple"
+[id]="formSimpleId">
+  <div *ngIf="formSimpleTitle"
+  [id]="formSimpleId+'-title'"
+  class="form-simple-title">
+    {{formSimpleTitle}}
+  </div>
+  <div *ngIf="formSimpleDescription"
+  [id]="formSimpleId+'-description'"
+  class="form-simple-description">
+    {{formSimpleDescription}}
+  </div>
+  <ng-content></ng-content>
+</div>

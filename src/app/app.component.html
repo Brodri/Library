@@ -1,21 +1,348 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="header"
+[searchHeader]=""
+[auditHeader]="true"
+[pendingTaskHeader]="true"
+[languageHeader]="lenguajes"
+[colorHeader]="activeColor"
+[colorSearchHeader]="'#446fce'"
+[logoHeader]="'assets/images/colombia.svg'"
+[optionsMenuHeader]="arrayMenuHeader"
+[headerRequiredSearchHeader]= "false"
+[headerMyHoldingSupevision]= "true"
+>
+</header>
+<div id="myDIV" style="margin-top:111px;position:absolute; width:100%">
 
-<router-outlet></router-outlet>
+    <body-simple [bodySimpleId]="body-1">
+
+        <form-simple
+        [formSimpleId]="'form-1'"
+        [formSimpleTitle]="'Formulario'"
+        [formSimpleDescription]="'The form in case its necesary Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,  cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'">
+
+            <h4>Input Simple</h4>
+            <input-simple
+                [inputSimpleId]="'inputSimple1'"
+                [inputSimpleContent]="'Change/Edit name'"
+                [inputSimpleIniPlaceholder]="'Email'"
+                [inputSimpleData]="'Email'"
+                [inputSimpleRequired]="true"
+                [inputSimpleNotSpace]="true"
+                [inputSimpleEmail]="false"
+                [inputSimpleDisabled]="false">
+            </input-simple>
+
+            <input-simple
+                [inputSimpleId]="'inputSimple2'"
+                [inputSimpleContent]="'Password'"
+                [inputSimpleIniPlaceholder]="'Password'"
+                [inputSimpleData]="'Password'"
+                [inputSimpleRequired]="true"
+                [inputSimplePassword]="true">
+            </input-simple>
+
+            <h4>Select Option</h4>
+            <select-option #tagselect
+                [selectOptionType]="1"
+                [selectOptionImage]="true"
+                [selectOptionId]="'selectOption1'"
+                [selectOptionContent]="'Change/Edit name'"
+                [selectOptionPlaceholder]="'Please Select'"
+                [selectOptionArray]="selectOptionList"
+                [selectOptionWidthForce]="'190px'"
+                [selectOptionWidthForceContent]="'180px'"
+                [selectOptioRequired]="true"
+                [selectOptionDisabled]="false">
+            </select-option>
+
+            <h4>Autocomplete</h4>
+            <select-option #prueba
+                [selectOptionType]="2"
+                [selectOptionImage]="true"
+                [selectOptionId]="'selectOption2'"
+                [selectOptionContent]="'Change/Edit name'"
+                [selectOptionPlaceholder]="'Search...'"
+                [selectOptioRequired]="true"
+                [selectOptionImageInput]=true
+                [selectOptionArray]="autocompleteList">
+            </select-option>
+            <br>
+            <button-simple
+                [simpleButtonId]="'simple-button-1'"
+                [simpleButtonContent]="'Option Required'"
+                [simpleButtonColor]="activeColor"
+                [simpleButtonTextColor]="'#ffffff'"
+                (simpleButtonAction)="hola()"
+                [simpleButtonDisabled]="false"
+                [simpleButtonColorDisable]="'#2a51a5'">
+            </button-simple>
+            <h4>Input File</h4>
+            <input-file
+                [inputFileId]="'input-file-1'"
+                [inputFileFormat]="inputFileFormat"
+                [inputFileColor]="activeColor"
+                [inputFileTitle]="inputFileTitle"
+                [inputFileContentButton]="inputFileButton"
+                [inputFileDisabled]="false"
+                [inputFileButtonActive]="false"
+                [inputFileDataSize]="'2MB'"
+                [inputFileDataDimensions]="'60px X 60px'">
+            </input-file>
+
+            <h4>Slide Toggle</h4>
+            <slide-toggle [slideToggleCheck]="false" [slideToggleId]="'slide-toggle-1'"></slide-toggle>
+
+            <h4>Checkbox</h4>
+            <checkbox
+                [checkboxId]="'checkbox1'"
+                [checkboxData]="false"
+                [checkboxRequired]="true"
+                [checkboxDisabled]="false"
+                [checkboxColor]="'#ef9162'"
+                [backgroundCheckbox]="'white'"
+                [checkboxContent]="'Lorem ipsum dolor sit amet,'"
+                [checkboxColor]="activeColor">
+            </checkbox>
+
+            <h4>Radio Button</h4>
+            <radio-button
+                [radioButtonId]="'id1'"
+                [radioButtonName]="'name1'"
+                [radioButtonContent]="'Lorem ipsum dolor sit amet,'"
+                [radioButtonColor]="activeColor">
+            </radio-button>
+            <radio-button
+                [radioButtonId]="'id2'"
+                [radioButtonName]="'name1'"
+                [radioButtonContent]="'Lorem ipsum dolor sit amet,'"
+                [radioButtonColor]="activeColor">
+            </radio-button>
+
+            <h4>State Select</h4>
+            <state-select [stateSelectWidth]="'152px'"></state-select>
+
+            <h4>Textarea Simple</h4>
+            <textarea-simple
+                [textareaSimpleId]="'textareaSimple1'"
+                [textareaSimpleContent]="'Change description'"
+                [textareaSimpleData]="'Description'"
+                [textareaSimpleRequired]="true"
+                [textareaSimpleIniPlaceholder]="'Description'">
+            </textarea-simple>
+
+            <h4>Button Simple</h4>
+            <button-simple
+                [simpleButtonId]="'simple-button-1'"
+                [simpleButtonContent]="'Brandon Camilo Rodriguez'"
+                [simpleButtonColor]="activeColor"
+                [simpleButtonTextColor]="'#ffffff'"
+                (simpleButtonAction)="myFunction()"
+                [simpleButtonDisabled]="false"
+                [simpleButtonColorDisable]="'#2a51a5'">
+            </button-simple>
+
+            <h4>Popup</h4>
+            <button-simple
+                [simpleButtonId]="'simple-button-1'"
+                [simpleButtonContent]="'Popup'"
+                [simpleButtonColor]="activeColor"
+                [simpleButtonTextColor]="'#ffffff'"
+                (simpleButtonAction)="activePopup()"
+                [simpleButtonDisabled]="false"
+                [simpleButtonColorDisable]="'#2a51a5'">
+            </button-simple>
+            <popup #examplePopup
+                [popupColor]="activeColor"
+                [popupTitle]="'Pop up status'"
+                [popupContent]="'Description of the tasks to do on the screen tasks to do on the screen.of the tasks to do on the screen tasks to do'"
+                [popupCancelButton] = "true"
+                >
+            </popup>
+
+            <h4>Snackbar</h4>
+            <snackbar
+                [snackbarId]="'snackbar-1'"
+                [snackbarColor]="'#F6EDBD'"
+                [snackbarOtherColor]="'black'"
+                [snackbarContent]="'Test Snackbar'"
+                [snackbarBorder]="'#E5C36C'">
+            </snackbar>
+
+            <h4>Datepicker</h4>
+            <datepicker
+                [datepickerTitle]="'Title Datepicker'"
+                [datepickerSubtitle]="'Subtitle Datepicker'"
+                [datepickerId]="'datepicker-1'"
+                [datepickerColor]="'#3366cc'"
+                [datepickerType]="'simple'"
+                [datepickerMonths]="[1,2]">
+            </datepicker>
+            <datepicker
+                [datepickerTitle]="'Title Datepicker'"
+                [datepickerSubtitle]="'Subtitle Datepicker'"
+                [datepickerId]="'datepicker-2'"
+                [datepickerColor]="'#3366cc'"
+                [datepickerType]="'range'"
+                [datepickerMonths]="[1,2]">
+            </datepicker>
+
+        </form-simple>
+
+        <form-simple>
+            <h4>Card Grid</h4>
+        </form-simple>
+        <card-grid>
+            
+
+        </card-grid>
+
+        <form-simple>
+            <h4>Card</h4>
+        </form-simple>
+        <card [cardId]="'card-1'"
+        [cardImageActive]="true"
+        [cardImage]="'assets/images/global-use-cases.svg'"
+        [cardDisplaceable]="true"
+        [cardTraditional]="true">
+            <div [id]="'card-1-displaceable'" displaceable>
+                <div class="card-buttons-up">
+                    <div class="card-buttons-container">
+                        <img class="card-buttons-up-image" src="assets/images/new.svg" alt="">
+                        <div class="card-buttons-up-text">Create New User</div>
+                    </div>
+                </div>
+                <card [cardId]="'card-1-1'"
+                [cardImageActive]="true"
+                [cardImage]="'assets/images/user-picture.svg'"
+                [cardDisplaceable]="false"
+                (cardSelectClick)="cardSelectClick($event)">
+                    <div [id]="'card-1-1-displaceable'" displaceable>
+                    </div>
+                    <div content>
+                        <div style="width:33.3333333333%; margin-top: 8px;" class="card-text-2 card-no-displaceable">
+                            Julio Hernández
+                            <br>
+                            j.hernandez@mobiera.com
+                            <br>
+                            Commercial/Sales
+                        </div>
+                        <div style="width:33.3333333333%; text-align:center; margin-top: 24px;" class="card-text-2 card-no-displaceable">
+                            Never log in
+                        </div>
+                        <div style="width:33.3333333333%; text-align:center; margin-top: 24px;" class="card-text-2 card-no-displaceable">
+                            Active
+                        </div>
+                    </div>
+                </card>
+                <card [cardId]="'card-1-2'"
+                [cardImageActive]="true"
+                [cardImage]="'assets/images/user-picture.svg'"
+                [cardDisplaceable]="false">
+                <div [id]="'card-1-2-displaceable'" displaceable>
+                </div>
+                    <div content>
+                        <div style="width:33.3333333333%; margin-top: 8px;" class="card-text-2 card-no-displaceable">
+                            Julio Hernández
+                            <br>
+                            j.hernandez@mobiera.com
+                            <br>
+                            Commercial/Sales
+                        </div>
+                        <div style="width:33.3333333333%; text-align:center; margin-top: 24px;" class="card-text-2 card-no-displaceable">
+                            Never log in
+                        </div>
+                        <div style="width:33.3333333333%; text-align:center; margin-top: 24px;" class="card-text-2 card-no-displaceable">
+                            Active
+                        </div>
+                    </div>
+                </card>
+            </div>
+            <div content>
+                <div class="card-title">
+                    Campaigns
+                </div>
+                <div class="card-text">
+                    The form in case its necesary Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,  cuando un impresor (N. del T. persona que se dedica a la imprenta) des.
+                </div>
+            </div>
+        </card>
+        <card [cardId]="'card-2'"
+        [cardImageActive]="false"
+        [cardImage]="'assets/images/global-use-cases.svg'"
+        [cardDisplaceable]="true">
+            <div [id]="'card-2-displaceable'" style="padding:24px; text-align:center;width:auto" displaceable>
+                <table-primary
+                *ngIf="table=='scroll infinite'"
+                [tablePrimaryId]="4"
+                [tablePrimaryTypeTable]="'scroll infinite'"
+                [tablePrimaryBackground]="activeColor"
+                [tablePrimaryColor]="'#ffffff'"
+                [tablePrimaryQuantityShow]="20"
+                [tablePrimaryQuantityScroll]="30">
+                </table-primary>
+            </div>
+            <div content>
+                <div class="card-title">
+                    Campaigns
+                </div>
+                <div class="card-text">
+                    The form in case its necesary Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,  cuando un impresor (N. del T. persona que se dedica a la imprenta) des.
+                </div>
+            </div>
+        </card>
+
+        <form-simple>
+            <h4>Table</h4>
+            <button (click)="table='pagination'">Pagination</button>
+            <button (click)="table='scrolling'">Scrolling</button>
+            <button (click)="table='scroll infinite'">Scroll infinite</button>
+
+            <table-primary
+            *ngIf="table=='pagination'"
+            [tablePrimaryId]="1"
+            [tablePrimaryTypeTable]="'pagination'"
+            [tablePrimaryBackground]="activeColor"
+            [tablePrimaryColor]="'#ffffff'"
+            [tablePrimaryQuantityShow]="10"
+            [tablePrimaryQuantityScroll]="15"
+            [tablePrimaryTextAlign]="tablePrimaryTextAlign"
+            [tablePrimaryArrayComponents]="tablePrimaryArrayComponents"
+            [tablePrimaryHead]="tablePrimaryHead"
+            [tablePrimaryBody]="tablePrimaryBody"
+            >
+            </table-primary>
+            <table-primary
+            *ngIf="table=='scrolling'"
+            [tablePrimaryId]="2"
+            [tablePrimaryTypeTable]="'scrolling'"
+            [tablePrimaryBackground]="activeColor"
+            [tablePrimaryColor]="'#ffffff'"
+            [tablePrimaryQuantityShow]="10"
+            [tablePrimaryQuantityScroll]="15"
+            [tablePrimaryTextAlign]="tablePrimaryTextAlign"
+            [tablePrimaryArrayComponents]="tablePrimaryArrayComponents"
+            [tablePrimaryHead]="tablePrimaryHead"
+            [tablePrimaryBody]="tablePrimaryBody">
+            </table-primary>
+            <table-primary
+            *ngIf="table=='scroll infinite'"
+            [tablePrimaryId]="3"
+            [tablePrimaryTypeTable]="'scroll infinite'"
+            [tablePrimaryBackground]="activeColor"
+            [tablePrimaryColor]="'#ffffff'"
+            [tablePrimaryQuantityShow]="20"
+            [tablePrimaryQuantityScroll]="30"
+            [tablePrimarySelectOptions]="true"
+            (tablePrimaryTrSelect)="tablePrimaryTrSelect($event)"
+            (tablePrimaryTrClose)="tablePrimaryTrClose($event)"
+            [tablePrimaryTextAlign]="tablePrimaryTextAlign"
+            [tablePrimaryArrayComponents]="tablePrimaryArrayComponents"
+            [tablePrimaryHead]="tablePrimaryHead"
+            [tablePrimaryBody]="tablePrimaryBody">
+                <div id="prueba" style="position:absolute;display:none" tablePrimaryTrSelected>
+                    hi
+                </div>
+            </table-primary>
+        </form-simple>
+    </body-simple>
+</div>

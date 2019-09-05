@@ -1,0 +1,37 @@
+<div
+[id]="textareaSimpleId+'-textarea-simple'" class="textarea-simple">
+  <div *ngIf="textareaSimpleContent"
+  [id]="textareaSimpleId+'-content'"
+  class="textarea-simple-name">
+    {{textareaSimpleContent}}:
+  </div>
+  <div
+  [id]="textareaSimpleId+'-container'"
+  class="textarea-simple-container">
+    <textarea
+      class="textarea-simple-textarea"
+      [(ngModel)]="textareaSimpleData" 
+      #ctrl="ngModel"
+      [id]="textareaSimpleId"
+      (ngModelChange)="textareaSimpleChange($event, textareaSimpleId)"
+      (focusout)="textareaSimpleChangeFocusOut(textareaSimpleId)"
+      (focus)="textareaSimpleChangeFocus(textareaSimpleId)"
+      type="text"
+      [disabled]="textareaSimpleDisabled">
+    </textarea>
+    <div *ngIf="textareaSimpleRequired || textareaSimpleEmail || textareaSimpleNumber"
+    [id]="textareaSimpleId+'-error'"
+    class="textarea-simple-message-error">
+      <img
+      [id]="textareaSimpleId+'-logo'"
+      class="textarea-simple-logo-error"
+      src="assets/images/close-red.svg"
+      alt="error textarea">
+      <div
+      [id]="textareaSimpleId+'-message-error'"
+      class="textarea-simple-text-error">
+        {{textareaSimpleContent}} no valido
+      </div>
+    </div>
+  </div>
+</div>

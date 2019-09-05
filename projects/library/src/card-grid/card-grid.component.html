@@ -1,0 +1,37 @@
+<div class="card-grid"
+[style.visibility]="cardGridVisibility"
+[id]="cardGridId">
+  <div *ngFor="let data of cardGridData; let i = index"
+  [ngClass]="cardGridClass"
+  (click)="optionCardGrid(data.name)"
+  [id]="cardGridId+'-'+i"
+  [style.margin-right]="cardGridMarginHorizontal+'px'"
+  [style.margin-left]="cardGridMarginHorizontal+'px'"
+  [style.width]="data.sizeBox+'px'">
+    <img class="card-grid-image"
+    [id]="'card-grid-image-'+cardGridId+'-'+i"
+    [src]="data.image"
+    [style.width]="data.sizeImage+'px'"
+    [style.height]="data.sizeImage+'px'">
+    <div
+    [id]="'card-grid-title-'+cardGridId+'-'+i"
+    class="card-grid-title">
+      {{data.title}}
+    </div>
+    <div
+    [id]="'card-grid-description-'+cardGridId+'-'+i"
+    class="card-grid-description">
+      {{data.description1}}
+    </div>
+    <div
+    [id]="'card-grid-description-'+cardGridId+'-'+i"
+    class="card-grid-description">
+      {{data.description2}}
+    </div>
+    <div
+    [id]="'card-grid-description-'+cardGridId+'-'+i"
+    class="card-grid-description">
+      {{data.description3}}
+    </div>
+  </div>
+</div>

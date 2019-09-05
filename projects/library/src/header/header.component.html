@@ -1,0 +1,269 @@
+<div class="header" [style.background]='colorHeader'>
+
+    <div class="header-menu-left" id="header-menu-left" (click)="headerMainMenu()">
+        <div [class]="headerClassMenuLeft" id="header-menu-principal" (click)="headerMainMenuOpen()" [style.background]='headerOpacityMenuLeft'>
+            <div class="header-hamburguer" id="header-hamburguer">
+                <div class="header-hamburguer-bar1"></div>
+                <div class="header-hamburguer-bar2"></div>
+                <div class="header-hamburguer-bar3"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="header-logo-principal" id="header-logo-principal" (click)="headerLogoMenu()">
+        <img (click)="principalMenuHeaderFunction()" class="header-logo" [src]="logoHeader" alt="Logo Header">
+    </div>
+    
+    <div class="header-menu-movil header-squares-margen" id="header-squares-margen" [style.margin-left] = "headerStyleMarginLeft">
+        <div [style.width]='headerGrid+"%"' (click)="headerSquaresMenu()">
+            <div class="header-hover-icons" [style.background]="headerSquaresBackground">
+                <div id="header-div-squares" class="header-width100" (click)="headerSquaresMenuOpen();">
+                    <img class="header-icon-menu header-icon-center" src="assets/images/squares.svg" alt="Squares">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-menu-movil header-pending-task-margen" id="header-pending-task-margen">
+        <div [style.width]='headerGrid+"%"' (click)="headerAlarmMenu()" *ngIf="pendingTaskHeader">
+            <div id="header-div-alarm" class="header-hover-icons">
+                <img class="header-icon-menu header-icon-center" src="assets/images/alarm.svg" alt="Alert">
+            </div>
+        </div>
+    </div>
+
+    <div class="header-search" (click)="headerSearchMenu();" *ngIf="headerRequiredSearchHeader">
+        <div class="header-search-submenu-desktop">
+            <img src="assets/images/search.svg" alt="" class="header-search-icon">
+            <input class="header-input" id="header-txt-search1" type="text" [style.background]='colorSearchHeader' (focusout)="headerFocusoutSearchPlaceholder()" (focus)="headerFocusSearchPlaceholder()" [placeholder]="headerSearchPlaceholderNew" [(ngModel)]="searchHeader" (ngModelChange)="headerInputChange($event)">
+        </div>
+        <div class="header-menu-movil" id="width-search-submenu2" (click)="headerSearchFocus(); headerSearchFocusSelection()">
+            <img src="assets/images/search.svg" alt="" class="header-search-icon">
+            <input class="header-input" id="header-txt-search2" (focusout)="headerFocusoutSearchPlaceholder()" (focus)="headerFocusSearchPlaceholderMovil()" type="text" [style.background]='colorSearchHeader' [(ngModel)]="searchHeader" (ngModelChange)="headerInputChangeMovil($event)">
+        </div>
+        
+        <img class="header-clean-input" id="clean-input-desktop" *ngIf="headerShowClearInput" (click)="headerClearInput()" src="assets/images/close.svg" alt="Clear input">
+        <div class="header-search-filter" *ngIf="headerShowClearInput"></div>
+
+    </div>
+
+    <img class="header-clean-input-movil" id="clean-input-movil" (click)="headerClearInputMovil(); headerSearchFocusNoSelection()" src="assets/images/close.svg" alt="Clear input">
+    <div class="header-search-filter-movil" id="search-filter-movil">
+        <div class="header-search-content-filter-movil" id="search-content-filter-movil">
+        </div>
+    </div>
+
+</div>
+
+<div class="header-search-filter-movil holding-movil" id="tooltiptext-squares-movil">
+    <ng-content select="[squares-movil]"></ng-content>
+</div>
+
+<div class="header-tooltiptext-user-movil holding-movil" id="tooltiptext-help-movil">
+    Help
+</div>
+
+<div class="header-search-filter-movil holding-movil" id="tooltiptext-holding-movil">
+    <div class="header-holding-movil">
+        <div class="header-my-holding-movil" [style.background]='colorHeader'>
+            <div class="header-my-holding-movil-title">
+                My Holding
+            </div>
+        </div>
+        <div class="header-my-holding-image-container">
+            <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+        </div>
+        <div class="header-my-holding-movil" [style.background]='colorHeader'>
+            <div class="header-my-holding-movil-title">
+                Supervision
+            </div>
+        </div>
+        <div class="header-my-holding-images">
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container">
+                <img class="header-holding-my-holding-image" src="assets/images/mobiera.svg" alt="">
+            </div>
+            <div class="header-my-holding-image-container header-create-new-holding-border">
+                <div class="header-create-new-holding-movil" (click)="headerCreateNewHolding()">Create New Holding</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-tooltiptext-user-movil" id="tooltiptext-user-movil">
+    <div class="header-image-user-picture-movil">
+        <img style="width: 208px;border-radius: 100px;height: 208px;" [src]="headerUserPerfilPhoto" alt="">
+    </div>
+    <div class="header-movil-datos-usuario-movil">{{headerDataUser.name}}</div>
+    <div class="header-movil-datos-usuario-movil">{{headerDataUser.email}}</div>
+    <div class="header-options-profile-movil">
+        <div *ngIf="headerComponentMyaccount" class="header-option-profile-movil" (click)="myAccountMenuHeaderFunction()">{{ 'Header.MyAccount' | translate }}</div>
+        <div class="header-option-profile-movil" (click)="exitMenuHeaderFunction()">{{ 'Header.SafeExit' | translate }}</div>
+    </div>
+</div>
+
+<div class="header-width-menu-right">
+        <div [style.width]='headerGrid+"%"' (click)="headerAuditMenu()" *ngIf="auditHeader">
+            <div id="header-div-audit" class="header-hover-icons header-tooltip" (click)="headerRedirectAuditFunction()">
+                <img class="header-icon-menu header-icon-center" src="assets/images/audit.svg" alt="Audit">
+                <div class="header-tooltiptext">{{ 'Header.Audit' | translate }}</div>
+            </div>
+        </div>
+        <div [style.width]='headerGrid+"%"' (click)="headerAlarmMenu()" *ngIf="pendingTaskHeader">
+            <div id="header-div-alarm" class="header-hover-icons header-tooltip" (click)="headerRedirectPendingTaskFunction()">
+                <img class="header-icon-menu header-icon-center" src="assets/images/alarm.svg" alt="Alert">
+                <div class="header-tooltiptext">{{ 'Header.PendingTask' | translate }}</div>
+            </div>
+        </div>
+    <div [style.width]='headerGrid+"%"' (click)="headerQuestionMenu()">
+        <div id="header-div-question" class="header-hover-icons header-tooltip" [style.background]="headerHelpBackground" *ngIf = "headerRequiredButtonHelp">
+            <div id="header-div-help" class="header-width100" (click)="headerHelpMenuOpen()">
+                <img class="header-icon-menu header-icon-center" src="assets/images/question.svg" alt="Question">
+                <div class="header-tooltiptext">{{ 'Header.Help' | translate }}</div>
+            </div>
+        </div>
+    </div>
+    <div [style.width]='headerGrid+"%"' (click)="headerUserMenu()">
+        <div class="header-hover-icons header-tooltip" [style.background]="headerUserBackground">
+            <div id="header-div-user" class="header-width100" (click)="headerUserMenuOpen()">
+                <img class="header-icon-menu header-icon-center" style="width: 35px;height: 35px;border-radius: 100px;margin-left: 0px;margin-top: 1px" [src]="headerUserPerfilPhoto" alt="User">
+                <div class="header-tooltiptext" [style.visibility]="headerTooltipUserVisibility">{{ 'Header.MyAccount' | translate }}</div>
+            </div>
+            <div class="header-tooltiptext-user" [style.visibility]="headerMenuUserVisibility" [style.opacity]="headerMenuUserOpacity">
+                <div style="height: 150px;">
+                    <img style="margin-top: 15px; border-radius: 100px;width: 130px;height: 130px;" class="header-image-user-picture-image" [src]="headerUserPerfilPhoto" alt="">
+                </div>
+                <div style="margin-bottom: 14px;">
+                    <div class="header-movil-datos-usuario">{{headerDataUser.name}}</div>
+                    <div class="header-movil-datos-usuario">{{headerDataUser.email}}</div>
+                </div>
+                <div style="position: relative;" class="header-options-profile-movil">
+                    <div *ngIf="headerComponentMyaccount" style="padding-bottom: 10px;padding-top: 10px;color:#666666" class="header-option-profile-movil" (click)="myAccountMenuHeaderFunction()">{{ 'Header.MyAccount' | translate }}</div>
+                    <div style="padding-bottom: 10px;padding-top: 10px;color:#666666" class="header-option-profile-movil" (click)="exitMenuHeaderFunction()">{{ 'Header.SafeExit' | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [style.width]='headerGrid+"%"' (click)="headerSquaresMenu()">
+        <div class="header-hover-icons header-tooltip" [style.background]="headerSquaresBackground">
+            <div id="header-div-squares" class="header-width100" (click)="headerSquaresMenuOpen()">
+                <img class="header-icon-menu header-icon-center" src="assets/images/squares.svg" alt="Squares">
+                <div class="header-tooltiptext-account" [style.visibility]="headerTooltipSquaresVisibility">Apps</div>
+            </div>
+            <div class="header-tooltiptext-squares" [style.visibility]="headerMenuSquaresVisibility" [style.opacity]="headerMenuSquaresOpacity">
+                <ng-content select="[squares]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-breadcrumb" (click)="headerBreadcrumb()">
+    <!--<div style="display: flex;">
+        <h3 *ngFor="let data of headerBreadcrumbs; let i = index" class="header-title-breadcrumb">
+            <div class="header-breadcrumbs-line" *ngIf="i>0">></div>
+            <div class="header-breadcrumbs-redirect" (click)="headerBreadCrumbRedirect(data.redirect)">{{data.name}}</div>
+        </h3>
+    </div>-->
+    <div class="header-breadcrumb-container-1" id="header-breadcrumb-container-1">
+        <div class="header-breadcrumb-container-2">
+            <h3 *ngFor="let data of headerBreadcrumbs; let i = index" class="header-title-breadcrumb">
+                <div class="header-breadcrumbs-line" *ngIf="i>0">></div>
+                <div class="header-breadcrumbs-redirect" (click)="headerBreadCrumbRedirect(data.redirect)">{{data.name}}</div>
+            </h3>
+        </div>
+    </div>
+    <!-- <div class="header-logos" id="breadcrumb-div-logo" [style.background]="headerHoldingBackground" [style.border]="headerHoldingBorder" (click)="headerHoldingMenu(); headerHoldingMenuOpen()" *ngIf="headerMyHoldingSupevision">
+        <img class="header-icon-submenu header-submenu-logo" [src]="headerImagePrincipalHolding" alt="Logo">
+        <img class="header-down" src="assets/images/down.svg" [style.visibility]="headerHoldingVisibility" alt="Down">
+    </div> -->
+    <!-- <div class="header-hover-icons submenu-position" id="breadcrumb-div-submenu" *ngIf="headerMyHoldingSupevision">
+        <img class="header-icon-submenu" src="assets/images/submenu.svg" alt="submenu">
+    </div> -->
+</div>
+
+<div class="header-menu" [style.margin-left]='headerMarginLeftMenu'>
+        <div class="header-menu-option2">
+            <div class="header-menu-up">
+                <div class="header-menu-down-content">
+                    <div class="header-menu-movil-option" *ngFor="let options of optionsMenuHeader" (click)="optionMenuHeaderFunction(options.title)">
+                        <img class="header-icon-menu header-icon-center header-icon-menu-movil header-menu-movil-option-image" [src]="options.image">
+                        <div class="header-menu-movil-option-text">{{ options.name | translate}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="header-menu-division">
+            
+            <div class="header-menu-down">
+                <div class="header-menu-down-content">
+                    <div class="header-menu-movil-option" *ngIf="auditHeader" (click)="headerAuditMenu()">
+                        <img class="header-icon-menu header-icon-center header-icon-menu-movil header-menu-movil-option-image" src="assets/images/audit-movil.svg">
+                        <div class="header-menu-movil-option-text">{{ 'Header.Audit' | translate }}</div>
+                    </div>
+                    <div class="header-menu-movil-option" *ngIf="auditHeader" (click)="headerQuestionMenu(); headerHelpMenuOpen()">
+                        <img class="header-icon-menu header-icon-center header-icon-menu-movil header-menu-movil-option-image" src="assets/images/question-movil.svg">
+                        <div class="header-menu-movil-option-text">{{ 'Header.Help' | translate }}</div>
+                    </div>
+                    <div class="header-menu-movil-option" (click)="headerUserMenu(); headerUserMenuOpen()">
+                        <img class="header-icon-menu header-icon-center header-icon-menu-movil header-menu-movil-option-image" src="assets/images/user-movil.svg">
+                        <div class="header-menu-movil-option-text">{{ 'Header.MyAccount' | translate }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="header-container-icon-copyright" (click)="headerRedirectFooterFunction()">
+        <label style="cursor:pointer"> &copy; MOBIERA {{currentYear}}</label>
+    </div>
+</div>
+
+<div class="header-holding-container" id="tooltiptext-holding">
+    <div class="header-holding">
+        <div class="header-holding-arrow">
+            <div class="header-arrow-up" [style.border-bottom]='"6px solid "+colorHeader'>
+
+            </div>
+        </div>
+        <div class="header-holding-my-holding-container" [style.background]='colorHeader'>
+            <div class="header-holding-my-holding-title">My Holding</div>
+        </div>
+        <div (click)="headerExchangeHolding()">
+            <div [id]="'header-holding-my-holding-'+headerMyHoldingData.id" class="header-my-holding-image-container" (click)="headerSelectHolding(this,0,true)">
+                    <img class="header-holding-my-holding-image" [src]="headerMyHoldingData.image" alt="">
+            </div>
+        </div>
+        <div class="header-holding-my-holding-container" [style.background]='colorHeader'>
+            <div class="header-holding-my-holding-title">Supervision</div>
+        </div>
+
+        <div class="header-my-holding-images">
+            <div *ngFor="let data of headerSupervisionHoldingData; let i = index" (click)="headerExchangeHolding()">
+                <div  [id] = "'header-holding-supervision-holding-'+data.id" class="header-my-holding-image-container" (click)="headerSelectHolding(this,i,false)">
+                    <img class="header-holding-my-holding-image" [src]="data.image" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="header-create-new-holding" (click)="headerCreateNewHolding()">Create New Holding</div>
+    </div>   
+</div>
+
+<div class="header-cover" id="header-cover" (click)="headerCloseAll()" [style.display]="headerCoverDisplay" [style.opacity]="headerCoverOpacity"></div>

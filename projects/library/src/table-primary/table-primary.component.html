@@ -1,0 +1,140 @@
+<div class="table-primary-container">
+  <div class="table-primary-filters" *ngIf="tablePrimaryFilters">
+    <div class="table-primary-input" *ngFor="let data of tablePrimaryFilters">
+      <input-simple
+      (keypress)="inputSimpleChange(data)"
+      (paste)="inputSimpleChange(data)"
+      (keydown)="inputSimpleChange(data)"
+      [inputSimpleId]="'inputSimple-'+data"
+      [inputSimpleContent]="data"
+      [inputSimpleIniPlaceholder]="data"
+      [inputSimpleData]="data"
+      [inputSimpleRequired]="false"
+      [inputSimpleEmail]="false"
+      [inputSimpleWidth]="'auto'"
+      [inputSimpleMarginRight]="'6px'"
+      [inputSimpleMinWidth]="'200px'">
+      </input-simple>
+    </div>
+  </div>
+
+  <div *ngIf="tablePrimaryTypeTable=='scrolling'" [style.visibility]="tablePrimaryVisibilityScrolling" class="table-head-border">
+    <table class="table-primary-new" [id]="'table-new-'+tablePrimaryId">
+      <thead>
+        <tr [id]="'table-primary-tr-head-'+tablePrimaryId" class="table-primary-head" [style.background]="tablePrimaryBackground" [style.color]="tablePrimaryColor">
+          <th [id]="'table-head-new-'+tablePrimaryId+'-'+orderBy2" *ngFor="let data of tablePrimaryHead; let orderBy2 = index" (click)="sortTable(orderBy2)">
+            <div class="table-head-size">
+              <div class="table-primary-head-title">{{data}}</div>
+              <div><img class="table-primary-order" src="assets/images/order.svg" alt=""></div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <div [style.height]="heightTableShow+'px'" (scroll)="scrollingTable($event)" class="table-responsive" [id]="'table-primary-responsive-'+tablePrimaryId">
+    <table class="table-primary" [id]="'table-'+tablePrimaryId">
+      <thead [id]="'table-head-fixed-'+tablePrimaryId" style="display:none; z-index:10">
+        <tr class="table-primary-head" [style.background]="tablePrimaryBackground" [style.color]="tablePrimaryColor">
+          <th [id]="'table-head-previous-fixed-'+tablePrimaryId+'-'+orderBy1" *ngFor="let data of tablePrimaryHead; let orderBy1 = index" (click)="sortTable(orderBy1)">
+            <div class="table-head-size">
+              <div class="table-primary-head-title">{{data}}</div>
+              <div><img class="table-primary-order" src="assets/images/order.svg" alt=""></div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <thead [id]="'table-head-'+tablePrimaryId">
+        <tr [id]="'table-primary-tr-head-'+tablePrimaryId" class="table-primary-head" [style.background]="tablePrimaryBackground" [style.color]="tablePrimaryColor">
+          <th [id]="'table-head-previous-'+tablePrimaryId+'-'+orderBy1" *ngFor="let data of tablePrimaryHead; let orderBy1 = index" (click)="sortTable(orderBy1)">
+            <div class="table-head-size">
+              <div class="table-primary-head-title">{{data}}</div>
+              <div><img class="table-primary-order" src="assets/images/order.svg" alt=""></div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-content select="[tablePrimaryTrSelected]"></ng-content>
+        <tr
+        [id]="'table-primary-tr-body-'+tablePrimaryId+'-'+(i+1)"
+        [ngClass]="tablePrimarySelectOptionsClass"
+        *ngFor="let data of tablePrimaryBody | filter : variableFilter[0]: variableFilter[1]: variableFilter[2]: variableFilter[3]: variableFilter[4]: variableFilter[5]: variableFilter[6]: variableFilter[7]: variableFilter[8]: variableFilter[9]; let i = index"
+        (click)="tableSelectTr(i,'table-primary-tr-body-'+tablePrimaryId+'-'+(i+1),$event)">
+          <td [id]="'table-primary-tr-body-'+tablePrimaryId+'-'+(j+1)+'-var'" class="table-primary-space-body" *ngFor="let subData of data; let j = index" [style.text-align]="tablePrimaryTextAlign[j]">
+            
+            <div style="width: 152px;" *ngIf="tablePrimaryArrayComponents[j][0]=='state-select'" (click)="cancelFunctionTr()">
+              <state-select [stateSelectWidth]="'152px'" [stateSelectArray]="tablePrimaryArrayComponents[j][1]" [stateSelectPrincipal]="tablePrimaryArrayComponents[j][2][i]" (stateSelectClick)="tablePrimarySelectOption($event, i+1)"></state-select>
+            </div>
+
+            <div style="width: 248px;display: inline-table;" *ngIf="tablePrimaryArrayComponents[j][0]=='select-option'" (click)="cancelFunctionTr()">
+                <select-option
+                style="text-align: left;"
+                [selectOptionType]="1"
+                [selectOptionImage]="false"
+                [selectOptionId]="'select-option-table-'+tablePrimaryArrayComponents[j][2][i][1]+'-'+i"
+                [selectOptionContent]=""
+                [selectOptionWithContent]="false"
+                [selectOptionPlaceholder]="tablePrimaryArrayComponents[j][2][i][0]"
+                [selectOptioRequired]="true"
+                [selectOptionArray]="tablePrimaryArrayComponents[j][1]">
+                </select-option>
+              </div>
+
+              <div style="text-align: left;display: inline-table;" *ngIf="tablePrimaryArrayComponents[j][0]=='checkbox'" (click)="cancelFunctionTr()">
+                <div [style.width]="tablePrimaryArrayComponents[j][2][0].width" [style.margin-bottom]="tablePrimaryArrayComponents[j][2][0].margin" [style.margin-top]="tablePrimaryArrayComponents[j][2][0].margin" *ngFor="let data of tablePrimaryArrayComponents[j][1]; let check = index">
+                  <checkbox
+                    [checkboxId]="'checkbox-table-'+data.id+'-'+i"
+                    [checkboxData]="tablePrimaryArrayComponents[j][3][i][check]"
+                    [checkboxRequired]="data.required"
+                    [checkboxContent]="data.content"
+                    [checkboxColor]="data.color">
+                  </checkbox>
+                </div>
+              </div>
+
+            <div *ngIf="tablePrimaryArrayComponents[j][0]=='normal'">
+              {{subData}}
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="tablePrimaryTypeTable=='pagination'" class="table-primary-pagination-container">
+    <div class="table-primary-pagination-space">
+      Page: {{tablePrimaryActualPage}} of {{tablePrimaryPages}}
+    </div>
+    <div class="table-primary-botons-pagination">
+      <div [id]="'table-primary-pagination-click-'+tablePrimaryId" *ngIf="tablePrimaryActualPage==1 && tablePrimaryQuantityScroll<tablePrimaryBodyLocal" (click)="tablaPrimaryShowPagination()" class="table-primary-pagination-hover">
+        1-{{tablePrimaryQuantityScroll}}
+      </div>
+      <div [id]="'table-primary-pagination-click-'+tablePrimaryId" *ngIf="tablePrimaryActualPage>1 && tablePrimaryActualPage<tablePrimaryPages" (click)="tablaPrimaryShowPagination()" class="table-primary-pagination-hover">
+        {{tablePrimaryQuantityScroll*(tablePrimaryActualPage-1)+1}}-{{tablePrimaryQuantityScroll*tablePrimaryActualPage}}
+      </div>
+      <div [id]="'table-primary-pagination-click-'+tablePrimaryId" *ngIf="tablePrimaryActualPage==tablePrimaryPages" (click)="tablaPrimaryShowPagination()" class="table-primary-pagination-hover">
+        {{tablePrimaryQuantityScroll*(tablePrimaryActualPage-1)+1}}-{{this.tablePrimaryBodyLocal}}
+      </div>
+      <div class="table-primary-pagination">
+          of {{this.tablePrimaryBodyLocal}}
+        </div>
+      <div (click)="tablePrimaryPrevPage()" class="table-primary-boton-pagination table-primary-boton-pagination-space">
+        <div class="table-primary-boton-pagination-only">&#60;</div>
+      </div>
+      <div (click)="tablePrimaryNextPage()" class="table-primary-boton-pagination">
+        <div class="table-primary-boton-pagination-only">&#62;</div>
+      </div>
+    </div>
+    <div [id]="'table-primary-pagination-'+tablePrimaryId" class="table-primary-num-pages-container">
+      <div class="table-primary-num-pages-default">
+        Rows:
+      </div>
+      <div (click)="tablePrimaryChangePagination(data)" [class]="'table-primary-num-pages table-primary-verification-pages-'+tablePrimaryId" *ngFor="let data of tablePrimaryNumPages">
+        {{data}}
+      </div>
+    </div>
+  </div>
+</div>

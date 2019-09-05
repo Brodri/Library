@@ -1,0 +1,358 @@
+@import './src/assets/css/variables.scss';
+
+
+// Inputs
+.datapicker-title{
+    margin-bottom: 20px
+}
+
+.datapicker-input{
+    font-size: $title-form-font-size;
+    color: $global-black;
+    padding-left: $input-form-padding-left;
+    padding-right: $input-form-padding-right;
+    border: $input-form-border;
+    margin-left: 10px;
+    max-width: $form-content-max-width;
+    height: $input-form-height;
+    min-width: $form-content-min-width;
+}
+
+.datapicker-input:focus{
+    outline: none !important;
+    border: $input-form-border-focus;
+    box-shadow: 0 0 0px;
+}
+
+.datapicker-container{
+    width: 100%;
+    max-width: 554px;
+}
+
+.datepicker-icon{
+    width: 24px
+}
+
+.datapicker-container-icon-left{
+    margin-left: 40px
+}
+
+
+// Calendar
+
+#calendar_container  {
+    left: 34px;
+    position:relative;
+    top: 10px;
+}
+.calendar-actual{
+    color: #ffffff;
+    position: absolute;
+    width: 230px;
+}
+
+.calendar-actual-content{
+    display: flex;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.calendar-arrow {
+    position: absolute;
+    top:2px;
+}
+.left {
+    left: -34px;
+    position: absolute;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+.left:hover{
+    opacity: 0.8;
+}
+
+.right {
+    right: -34px;
+    position: absolute;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-left: 19px solid #3366cc;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+.right:hover{
+    opacity: 0.8;
+}
+
+.calendar-arrow a {
+    text-decoration: none;
+}
+
+.calendar-display-1{
+    border: solid 1px #cccccc;
+    width: 230px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: #ffffff;
+}
+
+.calendar-display-1 table {
+    table-layout: fixed;
+    width:220px;
+    height:180px;
+    margin-left:6px;
+    margin-top: 38px;
+}
+
+.calendar-days{
+    font: small-caption;
+    color: #535760;
+    text-align: center;
+}
+
+.calendar-number-day{
+    color: #828D98;
+    text-align: center;
+    font: small-caption;
+    display: table-footer-group;
+}
+
+.calendar-number-day td{
+    height: 16px;
+}
+
+.calendar-number-day-hover{
+    cursor: pointer;
+}
+
+.calendar-number-day-hover:hover{
+    background: #cccccc !important;
+}
+
+.calendar-month-number{
+    font-size: 14px;
+    width: auto;
+    margin-left: 8px;
+    padding-right: 8px;
+    border-style: solid;
+    border-width: 0px 2px 0px 0px;
+    border-color: #ffffff;
+}
+
+.calendar-month-name {
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%;
+    margin-left: 8px;
+}
+
+.calendar-year-number{
+    font-size: 14px;
+    width: auto;
+    margin: auto;
+    margin-right: 8px;
+}
+
+.calendar-day-selected{
+    background: #cccccc;
+}
+
+.calendar-cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.43;
+    z-index: 102;
+    width: 100%;
+    height: 100%;
+    display: none
+}
+
+.calendar-close{
+    display: none
+}
+
+.calendar-flex{
+    display: flex
+}
+
+.calendar-number-day-disable{
+    background: #cccccc;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.calendar-number-day-disable:hover{
+    background: #bbbbbb;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.calendar-number-day-selected{
+    background: #b1b1b1;
+    color: white;
+}
+
+@media screen and (min-width: 769px) {
+    #calendar_container{
+        background: transparent !important
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .calendar-flex{
+        display: initial;
+    }
+
+    .datapicker-container-icon-left{
+        margin-left: 0px;
+        float: left;
+    }
+
+    .calendar-input-from-responsive{
+        float: left;
+    }
+
+    .datapicker-1-container{
+        float: initial;
+        width: 100%;
+    }
+
+    .datapicker-input-from{
+        margin-bottom: 12px;
+    }
+
+    .calendar-cover{
+        display: block
+    }
+
+    .datepicker-responsive{
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+        position: absolute;
+        transition: 0.5s ease-in-out;
+        z-index: 1001;
+    }
+
+    #calendar_container{
+        position: fixed;
+        left: 20px;
+        max-width: 256px !important;
+        height: auto !important;
+        margin-left: calc(50% - 142px);
+        margin-top: 14vh;
+        padding-top: 38px;
+    }
+
+    .left{
+        left: 10px;
+        margin-top: 4px !important;
+        border-right: 12px solid #ffffff !important;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    }
+
+    .right{
+        right: 150px;
+        margin-top: 4px !important;
+        border-left: 12px solid #ffffff !important;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    }
+
+    .calendar-display-2{
+        display: none
+    }
+
+    .calendar-display-1{
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 252px;
+    }
+    .calendar-close{
+        color: #ffffff;
+        float: right;
+        margin-left: -22px;
+        margin-right: 10px;
+        margin-top: -36px;
+        font-size: 24px;
+        cursor: pointer;
+        display: block
+    }
+
+    .calendar-month-number{
+        text-align: center;
+        font-size: 34px;
+        width: 50%;
+    }
+
+    .calendar-month-name{
+        text-align: center;
+        margin: auto;
+        margin-left: 0px;
+        width: 25%
+    }
+
+    .calendar-year-number{
+        text-align: center;
+        margin: auto;
+        margin-left: 0px;
+        width: 25%
+    }
+
+    .calendar-table{
+        margin-top: 60px !important;
+    }
+
+    .calendar-actual-content{
+        display: inline;
+    }
+
+    .calendar-actual{
+        width: 252px;
+    }
+
+    .calendar-month-number{
+        float: left;
+        margin-left: 0px;
+        padding-right: 0px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .calendar-month-name{
+        float: left;
+        width: calc(50% - 2px);
+        margin-top: 8px;
+        font-size: 16px
+    }
+
+    .calendar-year-number{
+        float: right;
+        width: calc(50% - 2px);
+        margin-top: 4px;
+    }
+
+    .calendar-display-1 table {
+        width: 242px;
+    }
+
+    .calendar-number-day{
+        font-size: 14px;
+    }
+
+    .calendar-days{
+        font-size: 14px;
+    }
+
+}

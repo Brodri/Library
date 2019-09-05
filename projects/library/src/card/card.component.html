@@ -1,0 +1,32 @@
+<div [id]="cardId" class="card-container">
+  <div 
+  [id]="cardId+'-displaceable-click'"
+  [style.background]="cardBackground"
+  [ngClass]="cardRowPrincipal"
+  (click)="showDisplaceable()">
+    <div *ngIf="cardImageActive"
+    (click)="cardSelect(cardId)"
+    [id]="cardId+'-container-image'"
+    [ngClass]="cardContainerImage">
+      <img
+      [id]="cardId+'-image'"
+      class="card-image"
+      [src]="cardImage"
+      [style.width]="cardImageWidth"
+      alt="">
+    </div>
+    <div
+    [id]="cardId+'-container-content'"
+    [ngClass]="cardContent"
+    [style.width]="cardWidth"
+    [style.padding-left]="cardPadding">
+      <ng-content select="[content]"></ng-content>
+    </div>
+  </div>
+  <i *ngIf="cardDisplaceable" [id]="cardId+'-icon'" (mouseover)="cardBackground='#fbfbfb'" (mouseout)="cardBackground=''" (click)="showDisplaceable()" class="material-icons card-icon">
+    {{cardIcon}}
+  </i>
+  <div [style.height]="cardHeightAuto" [style.border]="cardBorder" [id]="cardId+'-card-row-displaceable'" class="card-row-displaceable">
+    <ng-content select="[displaceable]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div
+[id]="stateSelectPrincipal.id+'-container'" class="status-select"
+[style.width]="stateSelectWidth">
+    <div
+    [id]="stateSelectPrincipal.id"
+    class="status-select-container"
+    [style.background-color]="background"
+    (click)="StateSelectAccordion()">
+        {{stateSelectPrincipal.title}}
+        <div
+        [id]="stateSelectPrincipal.id+'-circle'"
+        [style.background]="stateSelectPrincipal.circleColor"
+        class="status-select-circle">
+        </div>
+    </div>
+    <div
+    class="status-select-panel"
+    [style.border-bottom]="border"
+    [style.border-top]="'0'"
+    [style.max-height.px]="height">
+        <div *ngFor="let list of stateSelectArray"
+        (click)="selectState(list.circleColor, list.name, list.title)"
+        [id]="stateSelectPrincipal.id+'-'+list.id"
+        class="status-select-options"
+        (mouseover)="changeStyle(stateSelectPrincipal.id+'-'+list.id, list.changeColor)"
+        (mouseout)="ReturnStyle(stateSelectPrincipal.id+'-'+list.id)">
+            {{list.title}}
+            <div
+            [id]="stateSelectPrincipal.id+'-'+list.id+'-circle'"
+            [style.background]="list.circleColor"
+            class="status-select-circle">
+            </div>
+        </div>
+    </div>
+</div>

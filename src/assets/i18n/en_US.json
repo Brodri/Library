@@ -1,0 +1,19 @@
+{
+    "Header": {
+        "InputSearch": "Example: Users",
+        "Audit": "Audit",
+        "PendingTask": "Pending Task",
+        "Help": "Help",
+        "MyAccount": "My Account",
+        "SafeExit": "Safe Exit",
+        "Users": "Users",
+        "HoldingAndOperations": "Holding & Operations",
+        "CreateNewHolding": "Create New Holding",
+        "GlobalUsecases": "Global Usecases",
+        "MovingOperationToOtherHolding": "Moving Operation to other Holding"
+    },
+    "inputFile":{
+        "inputFileDataSize":"Weight of the image",
+        "inputFileDataDimensions": "Dimensions of the image"
+    }
+}

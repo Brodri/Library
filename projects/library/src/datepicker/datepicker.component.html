@@ -1,0 +1,54 @@
+<div class="datapicker-title" [id]="datepickerId+'-title'" (click)="closeCalendar()">
+    <h2>{{datepickerTitle}}</h2>
+    <h4>{{datepickerSubtitle}}</h4>
+</div>
+
+<div class="datapicker-container">
+    <div>
+        <div class="calendar-flex">
+            <div class="calendar-input-from-responsive">
+                <img class="datepicker-icon" src="assets/images/datepicker.svg" alt="">
+            </div>
+            <input (ngModelChange)="datepickerChange1($event)" [(ngModel)]="DatepickerInput1"  type="text" (focus)="showCalendarFrom(datepickerId,'from')" class="datapicker-input datapicker-input-from" [id]="datepickerId+'-type-from'" readonly>
+            <!-- Range -->
+            <br *ngIf="datepickerType=='range'">
+            <div *ngIf="datepickerType=='range'" class="datapicker-container-icon-left">
+                <img class="datepicker-icon" src="assets/images/datepicker.svg" alt="">
+            </div>
+            <input *ngIf="datepickerType=='range'" [(ngModel)]="DatepickerInput2"  type="text" (focus)="showCalendarTo(datepickerId,'to')" class="datapicker-input" [id]="datepickerId+'-type-to'" readonly>
+            <!-- Close Range -->
+         </div>
+        <div>
+            <div [id]="datepickerId+'-calendar-from'" [style.visibility]="calendarVisibility" [style.height]="calendarHeight1" [style.opacity]="calendarOpacity1" [style.transition]="calendarTransition" class="datepicker-responsive">
+                <div id="calendar_container" [style.background]="datepickerColor" [style.max-width]="calendarMaxWidth" [style.height]="calendarHeight">
+                    <div [style.margin-top]="calendarMarginTop" [style.border-right]="'19px solid '+datepickerColor" class="calendar-arrow left" [id]="'left-'+datepickerId"><a href="#l"></a></div>
+                    <div [style.margin-top]="calendarMarginTop" [style.border-left]="'19px solid '+datepickerColor" class="calendar-arrow right" [id]="'right-'+datepickerId"><a href="#r"></a></div>
+                    <div (click)="closeCalendar()" class="calendar-close">x</div>
+                    <div *ngFor="let months of datepickerMonths" [id]="'calendar-display-'+datepickerId+'-'+months" [class]="'calendar-display-1 calendar-display-'+months">
+                        <div class="calendar-actual" [style.background]="datepickerColor">
+                            <div class="calendar-actual-content">
+                                <div [id]="'datepicker-month-number-'+datepickerId+'-'+months" class="calendar-month-number"></div>
+                                <div [id]="'datepicker-month-name-'+datepickerId+'-'+months" class="calendar-month-name"></div>
+                                <div [id]="'datepicker-year-number-'+datepickerId+'-'+months" class="calendar-year-number"></div>
+                            </div>
+                        </div>
+                        <table class="calendar-table">
+                            <thead>
+                                <tr class="calendar-days"><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>
+                            </thead>
+                            <tbody class="calendar-number-day">
+                                <tr class="r0"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                                <tr class="r1"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                                <tr class="r2"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                                <tr class="r3"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                                <tr class="r4"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                                <tr class="r5"><td class="col0"><td class="col1"><td class="col2"><td class="col3"><td class="col4"><td class="col5"><td class="col6"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div (click)="closeCalendar()" *ngIf="calendarMovil" class="calendar-cover"></div>
+        </div>
+    </div>
+</div>

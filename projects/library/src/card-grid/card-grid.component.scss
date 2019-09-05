@@ -1,0 +1,50 @@
+@import './src/assets/css/variables.scss';
+
+.card-grid{
+    display: table;
+    width: 100%;
+}
+
+.card-grid-grids{
+    text-align: center;
+    float: left;
+    margin-bottom: 16px;
+    margin-top: 26px;
+    cursor: pointer;
+}
+
+
+.card-grid-grids:hover .card-grid-image{
+    -webkit-filter: brightness(120%); /* Safari 6.0 - 9.0 */
+    filter: brightness(120%);
+}
+
+.card-grid-title{
+    font-size: 19px;
+    opacity: 0.8;
+}
+
+.card-grid-grids:hover .card-grid-title{
+    opacity: 1
+}
+
+.card-grid-grids-no-light{
+    text-align: center;
+    float: left;
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
+.card-grid-grids-no-light .card-grid-title{
+    opacity: 1;
+}
+
+
+.card-grid-description{
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.card-grid-grids:hover .card-grid-description{
+    opacity: 1
+}

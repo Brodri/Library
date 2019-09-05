@@ -1,0 +1,9 @@
+<input
+(change)="radioButtonChange()" type="radio"
+[id]="radioButtonId"
+[name]="radioButtonName"
+[value]="radioButtonId">
+<label
+[id]="radioButtonId+'-content'" class="radio-buttons" htmlFor="{{radioButtonId}}">
+    {{radioButtonContent}}
+</label>

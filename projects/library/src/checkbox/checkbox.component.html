@@ -1,0 +1,31 @@
+<div
+[id]="checkboxId+'-container'" class="checkbox-container-all">
+  <label
+  [id]="checkboxId+'-label'"
+  class="checkbox-container">
+  {{checkboxContent}}
+    <input
+    (change)="checkboxChange()"
+    [id]="checkboxId"
+    [(ngModel)]="checkboxData"
+    type="checkbox"
+    [disabled]="checkboxDisabled">
+    <span
+    [id]="checkboxId+'-span'"
+    [style.border]="borderCheckbox"
+    [style.background]="backgroundCheckbox"
+    class="checkbox-span"></span>
+  </label>
+  <div *ngIf="checkboxRequired"
+  [id]="checkboxId+'-error'"
+  class="checkbox-message-error">
+    <img
+    [id]="checkboxId+'-logo'"
+    class="checkbox-logo-error"
+    src="assets/images/close-red.svg"
+    alt="error input">
+    <div class="checkbox-text-error">
+      {{checkboxContent}} no valido
+    </div>
+  </div>
+</div>

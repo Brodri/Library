@@ -1,0 +1,246 @@
+@import './src/assets/css/variables.scss';
+
+.table-responsive{
+    overflow-x: auto;
+    width: 100%;
+    border-bottom: 1px solid #ccc
+}
+.table-primary-new{
+    width: calc(100% - 4px);
+    position: relative;
+    border: 0px;
+}
+
+.table-primary-container{
+    margin-bottom: $space-bottom-component;
+    margin-top: $space-top-component;
+}
+
+.table-head-border-movil{
+    display: none;
+}
+
+table {
+    border-spacing: 0;
+    //width: calc(100% + 1px);
+    width: calc(100%);
+    border: 1px solid #ddd;
+    border-left: 0px solid #fff;
+}
+
+th {
+    cursor: pointer;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border-left: 1px solid #cccccc;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2
+}
+
+.table-primary-head{
+    font-size: 16px
+}
+
+.table-primary-body{
+    font-size: 14px;
+    display: none
+}
+
+.table-tr-visible{
+    display: table-row;
+}
+
+.table-primary-order{
+    width: 6px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.table-primary-head-title{
+    font-weight: 100;
+    flex: auto;
+}
+
+.table-primary-space-body{
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.table-primary-input{
+    float: left;
+    margin-right: 28px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f2f2f2;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $global-gray1; 
+    border-radius:4px
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888888; 
+}
+
+.table-primary-filters{
+    display: flow-root;
+}
+
+.table-head-size{
+    display: flex
+}
+
+.table-primary-pagination-container{
+    height: 34px;
+}
+
+.table-primary-botons-pagination{
+    display: flex;
+    margin-top: 6px;
+    float: right;
+}
+
+.table-primary-boton-pagination{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    padding: 1px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    color: #cccccc;
+}
+
+.table-primary-boton-pagination:hover{
+    background: #f9f9f9
+}
+
+.table-primary-boton-pagination:active{
+    color: #333333
+}
+
+.table-primary-boton-pagination-only{
+    font-size: 24px;
+    margin-top: -4px;
+}
+
+.table-primary-pagination{
+    font-size: 16px;
+    color: #333333;
+    margin-top: 2px;
+    margin-right: 0px;
+    padding: 2px;
+}
+
+.table-primary-pagination-hover{
+    font-size: 16px;
+    color: #333333;
+    margin-top: 2px;
+    margin-right: 0px;
+    cursor: pointer;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.table-primary-pagination-hover:hover{
+    background: #f9f9f9
+}
+
+.table-primary-pagination-space{
+    font-size: 16px;
+    color: #333333;
+    margin-top: 6px;
+    padding: 2px;
+    float: left;
+}
+
+.table-primary-boton-pagination-space{
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.table-primary-num-pages-container{
+    padding: 10px;
+    float: right;
+    position: relative;
+    text-align: center;
+    width: 44px;
+    margin-right: -52px;
+    background: #ffffff;
+    border-width: 0px 1px 1px 0px;
+    border-color: #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+    display: none;
+}
+
+.table-primary-num-pages{
+    padding: 2px;
+    cursor: pointer;
+}
+
+.table-primary-num-pages:hover{
+    background: #f9f9f9;
+}
+
+.table-primary-num-pages-default{
+    padding: 2px;
+}
+
+.table-tr-select{
+    cursor: pointer;
+}
+
+.table-tr-select:hover{
+    background: #dedede;
+}
+
+@media screen and (max-width: 768px) {
+
+    .table-primary-space-body{
+        padding: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: center;
+    }
+
+    .table-primary-head{
+        font-size: 13px;
+    }
+
+    .table-primary-body{
+        font-size: 13px;
+    }
+
+    .table-primary-filters{
+        display: table-caption;
+        margin-bottom: 20px;
+    }
+
+    .table-head-border{
+        display: none;
+    }
+    .table-head-border-movil{
+        display: block;
+    }
+
+    .table-primary{
+        margin-top: 0px !important;
+    }
+}

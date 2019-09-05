@@ -1,0 +1,13 @@
+<div
+[id]="simpleButtonId+'-container'" class="simple-button-container">
+  <button
+  [ngClass]="simpleButtonStyle" 
+  [id]="simpleButtonId"
+  [style.background-color]="simpleButtonColor" 
+  [style.color]="simpleButtonTextColor" 
+  [style.border-color]="simpleButtonBorder" 
+  (click)="simpleButtonActionFunction()" 
+  [disabled]="simpleButtonDisabled">
+    {{simpleButtonContent}}
+  </button>
+</div>

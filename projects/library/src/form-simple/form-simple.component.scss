@@ -1,0 +1,33 @@
+@import './src/assets/css/variables.scss';
+
+.form-simple{
+    padding-left: $space1-text-horizontal;
+    padding-right: $space1-text-horizontal;
+}
+
+.form-simple-title{
+    padding-top: $subtitle1-text-bottom;
+    font-size: $subtitle1-font-size;
+    margin-bottom: $subtitle1-text-bottom;
+}
+
+.form-simple-description{
+    font-size: $description1-font-size;
+    text-align: $description1-align-description;
+    padding-bottom: $space-bottom-component;
+}
+
+@media screen and (max-width: 768px) {
+    .form-simple{
+        padding-left: $space1-text-horizontal-movil;
+        padding-right: $space1-text-horizontal-movil;
+    }
+
+    .form-simple-title{
+        padding-top: 10px;
+    }
+
+    .form-simple-description{
+        padding-bottom: 10px;
+    }
+}

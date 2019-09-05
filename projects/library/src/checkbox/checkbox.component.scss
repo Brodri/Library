@@ -1,0 +1,94 @@
+@import './src/assets/css/variables.scss';
+
+.checkbox-container-all{
+    margin-bottom: 5px
+}
+
+.checkbox-container {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: $title-form-font-size;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #535760;
+    line-height: 20px;
+    display: inline-block;
+    height: 22px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    display: none;
+}
+
+/* Create a custom checkbox */
+.checkbox-span {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 1px solid #535760;
+    transition: 0.3s;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-span:after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin-top: 9px;
+    transform: rotate(45deg);
+    left: 9px;
+    transition: 0.3s;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-span:after {
+    width: 4px;
+    height: 9px;
+    margin-top: 3px;
+    transform: rotate(410deg);
+    left: 8px;
+    transition: 0.3s;
+    border-width: 0px 2px 2px 0;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-span:after {
+    border: solid white;
+    border-width: 0 0px 0px 0;
+}
+
+.checkbox-error{
+    border: $input-form-border-error;
+    color: $input-form-color-error;
+}
+
+.checkbox-message-error{
+    font-size: $input-form-font-size-error;
+    color:$input-form-color-error;
+    visibility: $input-form-visibility-error;
+    position: $input-form-position-error;
+    transition: $input-form-transition-error;
+    min-width: $form-content-min-width;
+}
+
+.checkbox-logo-error{
+    width: $input-form-font-size-error;
+    margin-top: $input-form-icon-margin-top-error;
+    float: $input-form-icon-float-error;
+    transition: $input-form-transition-error;
+    margin-right: $input-form-icon-margin-right-error
+}
+
+.checkbox-text-error{
+    margin-top: $input-form-margin-top-error;
+}
